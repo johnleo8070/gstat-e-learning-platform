@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -35,7 +35,7 @@ const subjectColors: Record<string, string> = {
   music: "from-cyan-400 to-teal-500",
 }
 
-export default function CurriculumPage() {
+function CurriculumContent() {
   const searchParams = useSearchParams()
   const childIdParam = searchParams.get("childId")
 
@@ -250,5 +250,13 @@ export default function CurriculumPage() {
         </div>
       )}
     </div>
+  )
+}
+
+export default function CurriculumPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CurriculumContent />
+    </Suspense>
   )
 }

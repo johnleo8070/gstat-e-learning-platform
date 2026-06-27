@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useParams, useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -130,7 +130,7 @@ const subjectColors: Record<string, { from: string; to: string }> = {
   art: { from: "from-cyan-400", to: "to-teal-400" }
 }
 
-export default function LessonPlayer() {
+function LessonPlayerContent() {
   const params = useParams()
   const router = useRouter()
   const subject = params.subject as string
@@ -643,5 +643,13 @@ export default function LessonPlayer() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function LessonPlayer() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LessonPlayerContent />
+    </Suspense>
   )
 }

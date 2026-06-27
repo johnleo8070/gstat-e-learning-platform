@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
@@ -22,7 +22,7 @@ const plans = PRODUCTS.map(product => ({
   originalPrice: product.id === 'annual' ? '$191.88' : undefined,
 }))
 
-export default function SubscribePage() {
+function SubscribeContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const initialPlan = searchParams.get("plan") || "monthly"
@@ -254,5 +254,13 @@ export default function SubscribePage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function SubscribePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SubscribeContent />
+    </Suspense>
   )
 }
