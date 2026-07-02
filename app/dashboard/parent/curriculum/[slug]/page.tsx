@@ -82,7 +82,7 @@ export default function CurriculumSubjectPage({
           const progRes = await fetch(`/api/curriculum/progress?studentId=${resolvedSearchParams.childId}&subjectId=${curriculumData.subject.id}`)
           if (progRes.ok) {
             const progData = await progRes.json()
-            setProgress(progData)
+            setProgress(progData.progress || [])
           }
         }
       } catch (err: any) {

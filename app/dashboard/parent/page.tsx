@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { 
   Home, BookOpen, Trophy, Settings, LogOut, Bell, 
   User, Plus, ChevronRight, Star, Clock, TrendingUp,
-  Calendar, Target, BarChart3, Users, CreditCard, X, Loader2, Key, Eye
+  Calendar, Target, BarChart3, Users, CreditCard, X, Loader2, Key, Eye, Gamepad2
 } from "lucide-react"
 import { SignOutButton } from "@/components/auth/sign-out-button"
 import { createClient } from "@/lib/supabase/client"
@@ -446,7 +446,13 @@ export default function ParentDashboard() {
                           Start Learning
                         </Button>
                       </Link>
-                      <Link href="/dashboard/parent/reports" className="inline-block">
+                      <Link href={`/dashboard/parent/games?childId=${selectedChild.id}`} className="inline-block">
+                        <Button variant="outline" className="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white border-0 hover:opacity-90">
+                          <Gamepad2 className="w-4 h-4 mr-2" />
+                          Play Games
+                        </Button>
+                      </Link>
+                      <Link href="/dashboard/parent/reports" className="inline-block col-span-2">
                         <Button variant="outline" className="w-full">
                           <BarChart3 className="w-4 h-4 mr-2" />
                           View Reports
