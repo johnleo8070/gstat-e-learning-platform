@@ -6,7 +6,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { 
   Home, BookOpen, Trophy, Settings, LogOut, Bell, 
-  User, Calendar, BarChart3, Users, CreditCard, Loader2, Menu, X 
+  User, Calendar, BarChart3, Users, CreditCard, Loader2, Menu, X, Gamepad2 
 } from "lucide-react"
 import { SignOutButton } from "@/components/auth/sign-out-button"
 import { createClient } from "@/lib/supabase/client"
@@ -52,6 +52,7 @@ const getSidebarItems = (childId?: string) => [
   { icon: Home, label: "Dashboard", href: "/dashboard/parent" },
   { icon: Users, label: "My Children", href: "/dashboard/parent/children" },
   { icon: BookOpen, label: "Curriculum", href: childId ? `/dashboard/parent/curriculum?childId=${childId}` : "/dashboard/parent/curriculum" },
+  { icon: Gamepad2, label: "Games", href: childId ? `/dashboard/parent/games?childId=${childId}` : "/dashboard/parent/games" },
   { icon: BarChart3, label: "Progress Reports", href: "/dashboard/parent/reports" },
   { icon: Trophy, label: "Achievements", href: "/dashboard/parent/achievements" },
   { icon: Calendar, label: "Schedule", href: "/dashboard/parent/schedule" },

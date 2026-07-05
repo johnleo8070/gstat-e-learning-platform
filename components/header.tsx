@@ -39,14 +39,8 @@ export function Header() {
             <Link href="/" className={`text-sm font-medium transition-colors ${scrolled ? "text-primary hover:text-primary/80" : "text-white hover:text-white/80"}`}>
               Home
             </Link>
-            <Link href="#curriculum" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
-              Curriculum
-            </Link>
-            <Link href="/games" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
-              Games
-            </Link>
-            <Link href="/login/school" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
-              School Zone
+            <Link href="/demo" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+              Book a Demo
             </Link>
             <Link href="/login/parent" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
               Parent Zone
@@ -84,9 +78,7 @@ export function Header() {
           <div className={`md:hidden py-4 border-t ${scrolled ? "border-border bg-card" : "border-white/20 bg-blue-900/95 backdrop-blur"}`}>
             <nav className="flex flex-col gap-4">
               <Link href="/" className={`text-sm font-medium ${scrolled ? "text-primary" : "text-white"}`}>Home</Link>
-              <Link href="#curriculum" className={`text-sm font-medium ${scrolled ? "text-foreground" : "text-white/90"}`}>Curriculum</Link>
-              <Link href="/games" className={`text-sm font-medium ${scrolled ? "text-foreground" : "text-white/90"}`}>Games</Link>
-              <Link href="/login/school" className={`text-sm font-medium ${scrolled ? "text-foreground" : "text-white/90"}`}>School Zone</Link>
+              <Link href="/demo" className={`text-sm font-medium ${scrolled ? "text-foreground" : "text-white/90"}`}>Book a Demo</Link>
               <Link href="/login/parent" className={`text-sm font-medium ${scrolled ? "text-foreground" : "text-white/90"}`}>Parent Zone</Link>
               <div className={`flex gap-3 pt-4 border-t ${scrolled ? "border-border" : "border-white/20"}`}>
                 <Link href="/login">
