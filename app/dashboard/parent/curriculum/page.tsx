@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, BookOpen, Lock, CheckCircle, Loader2, User, Star } from "lucide-react"
+import { ArrowLeft, BookOpen, Lock, CheckCircle, Loader2, User, Star, Calculator, FlaskConical, Code, Palette, Music } from "lucide-react"
 
 interface Child {
   id: string
@@ -24,6 +24,7 @@ interface SubjectProgress {
   totalLessons: number
   completedLessons: number
   progressPercent: number
+  icon: any
 }
 
 const subjectColors: Record<string, string> = {
@@ -33,6 +34,15 @@ const subjectColors: Record<string, string> = {
   coding: "from-green-400 to-emerald-500",
   art: "from-pink-400 to-rose-500",
   music: "from-cyan-400 to-teal-500",
+}
+
+const subjectIcons: Record<string, any> = {
+  math: Calculator,
+  english: BookOpen,
+  science: FlaskConical,
+  coding: Code,
+  art: Palette,
+  music: Music,
 }
 
 function CurriculumContent() {
@@ -109,6 +119,7 @@ function CurriculumContent() {
               totalLessons,
               completedLessons,
               progressPercent: totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0,
+              icon: subjectIcons[slug] || BookOpen,
             })
           } catch {
             // Subject might not exist in DB, skip
@@ -189,7 +200,7 @@ function CurriculumContent() {
 
       {/* Subject Cards */}
       {selectedChildId && (
-        <div className="space-y-6">
+        <div className="mt-6">
           {progressLoading ? (
             <div className="flex items-center justify-center py-12">
               <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -203,49 +214,67 @@ function CurriculumContent() {
               </CardContent>
             </Card>
           ) : (
-            subjectProgress.map((sp) => (
-              <Link
-                key={sp.subjectId}
-                href={`/dashboard/parent/curriculum/${sp.subjectSlug}?childId=${selectedChildId}`}
-                className="block"
-              >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
-                  <CardHeader className={`bg-gradient-to-r ${sp.color} text-white`}>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="flex items-center gap-2">
-                        <BookOpen className="w-5 h-5" />
-                        {sp.subjectName}
-                      </CardTitle>
-                      <span className="text-sm font-semibold">{sp.progressPercent}% Complete</span>
-                    </div>
-                    <div className="mt-3 h-2 bg-white/20 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-white rounded-full transition-all duration-500"
-                        style={{ width: `${sp.progressPercent}%` }}
-                      />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1 text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-green-500" />
-                          <span className="text-sm">
-                            {sp.completedLessons} of {sp.totalLessons} lessons completed
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {subjectProgress.map((sp) => {
+                let Icon = BookOpen
+                if (sp.subjectSlug === "math") Icon = Calculator
+                else if (sp.subjectSlug === "science") Icon = FlaskConical
+                else if (sp.subjectSlug === "coding") Icon = Code
+                else if (sp.subjectSlug === "art") Icon = Palette
+                else if (sp.subjectSlug === "music") Icon = Music
+
+                return (
+                  <Link
+                    key={sp.subjectId}
+                    href={`/dashboard/parent/curriculum/${sp.subjectSlug}?childId=${selectedChildId}`}
+                    className="block h-full group"
+                  >
+                    <Card className="relative overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col border-0 ring-1 ring-border hover:ring-primary/50">
+                      {/* Decorative background circle */}
+                      <div className={`absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br ${sp.color} opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity`} />
+                      
+                      <CardHeader className={`bg-gradient-to-br ${sp.color} text-white p-5 border-b border-white/10`}>
+                        <div className="flex items-center justify-between mb-4">
+                          <CardTitle className="flex items-center gap-3 text-xl drop-shadow-md">
+                            <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm shadow-sm">
+                              <Icon className="w-6 h-6 text-white" />
+                            </div>
+                            {sp.subjectName}
+                          </CardTitle>
+                          <span className="text-sm font-bold bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm shadow-sm">
+                            {sp.progressPercent}%
                           </span>
                         </div>
-                      </div>
-                      <Button
-                        size="sm"
-                        className={`bg-gradient-to-r ${sp.color} text-white rounded-full group-hover:scale-105 transition-transform`}
-                      >
-                        {sp.completedLessons === 0 ? "Start" : sp.completedLessons >= sp.totalLessons ? "Review" : "Continue"}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))
+                        <div className="h-2.5 bg-black/20 rounded-full overflow-hidden shadow-inner relative">
+                          <div
+                            className="absolute top-0 left-0 h-full bg-white rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                            style={{ width: `${sp.progressPercent}%` }}
+                          />
+                        </div>
+                      </CardHeader>
+                      <CardContent className="p-5 flex-grow flex flex-col justify-end bg-gradient-to-b from-white to-gray-50/50">
+                        <div className="flex items-center justify-between mt-auto pt-2">
+                          <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2 text-muted-foreground font-medium bg-muted/50 px-3 py-1.5 rounded-lg border border-border/50">
+                              <CheckCircle className={`w-4 h-4 text-green-500 ${sp.completedLessons === sp.totalLessons && sp.totalLessons > 0 ? "fill-green-500/20" : ""}`} />
+                              <span className="text-sm">
+                                {sp.completedLessons} / {sp.totalLessons}
+                              </span>
+                            </div>
+                          </div>
+                          <Button
+                            size="sm"
+                            className={`bg-gradient-to-r ${sp.color} text-white rounded-xl shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 font-semibold px-5`}
+                          >
+                            {sp.completedLessons === 0 ? "Start" : sp.completedLessons >= sp.totalLessons ? "Review" : "Continue"}
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )
+              })}
+            </div>
           )}
         </div>
       )}

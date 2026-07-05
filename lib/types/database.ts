@@ -130,6 +130,18 @@ export interface Lesson {
   created_at: string
 }
 
+export interface Worksheet {
+  id: string
+  subject_id: string
+  title: string
+  description: string | null
+  file_url: string
+  is_premium: boolean
+  age_group_slugs: string[] | null
+  is_active: boolean
+  created_at: string
+}
+
 export interface StudentProgress {
   id: string
   student_id: string

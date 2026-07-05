@@ -31,7 +31,7 @@ const games = [
     ageRange: "4-7",
     plays: "12.5K",
     rating: 4.8,
-    href: "/games/number-blast",
+    href: "/dashboard/parent/games/number-blast",
   },
   {
     id: "word-builder",
@@ -44,7 +44,7 @@ const games = [
     ageRange: "5-8",
     plays: "9.8K",
     rating: 4.7,
-    href: "/games/word-builder",
+    href: "/dashboard/parent/games/word-builder",
   },
   {
     id: "memory-match",
@@ -57,7 +57,7 @@ const games = [
     ageRange: "3-6",
     plays: "15.2K",
     rating: 4.9,
-    href: "/games/memory-match",
+    href: "/dashboard/parent/games/memory-match",
   },
   {
     id: "color-splash",
@@ -70,7 +70,7 @@ const games = [
     ageRange: "3-5",
     plays: "8.3K",
     rating: 4.6,
-    href: "/games/color-splash",
+    href: "/dashboard/parent/games/color-splash",
   },
   {
     id: "puzzle-world",
@@ -83,7 +83,7 @@ const games = [
     ageRange: "5-8",
     plays: "7.1K",
     rating: 4.5,
-    href: "/games/puzzle-world",
+    href: "/dashboard/parent/games/puzzle-world",
   },
   {
     id: "music-maker",
@@ -96,7 +96,7 @@ const games = [
     ageRange: "4-7",
     plays: "6.4K",
     rating: 4.7,
-    href: "/games/music-maker",
+    href: "/dashboard/parent/games/music-maker",
   },
 ]
 

@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { ParentDashboardShell } from '@/components/parent/dashboard-shell'
 
 export default async function ParentDashboardLayout({
   children,
@@ -20,10 +21,9 @@ export default async function ParentDashboardLayout({
     .eq('user_id', user.id)
     .single()
 
-  // Optional: Redirect if not parent role
-  // if (profile?.role !== 'parent') {
-  //   redirect('/dashboard/' + profile?.role)
-  // }
-
-  return <>{children}</>
+  return (
+    <ParentDashboardShell>
+      {children}
+    </ParentDashboardShell>
+  )
 }

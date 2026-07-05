@@ -4,23 +4,71 @@ import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 import { getUserProfile } from './auth'
 
+import { createClient as createServiceClient } from '@supabase/supabase-js'
+
 export async function getChildren() {
   const supabase = await createClient()
-  const profile = await getUserProfile()
+  const { data: { user } } = await supabase.auth.getUser()
   
-  if (!profile) return []
+  if (!user) return []
 
-  const { data, error } = await supabase
+  // Use service role to bypass RLS for reads
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+  const supabaseService = createServiceClient(supabaseUrl, serviceKey);
+
+  // Get parent profile ID via service role
+  const { data: parentProfile } = await supabaseService
+    .from('profiles')
+    .select('id')
+    .eq('user_id', user.id)
+    .single();
+
+  const profileId = parentProfile?.id;
+  if (!profileId) return [];
+
+  const { data: students, error } = await supabaseService
     .from('students')
     .select('*')
-    .eq('parent_id', profile.id)
+    .eq('parent_id', profileId)
+    .order('created_at', { ascending: true })
 
-  if (error) {
+  console.log('[v0 debug] getChildren profile.id:', profileId, 'found students:', students?.length, 'error:', error);
+
+  if (error || !students) {
     console.error('Error fetching children:', error)
     return []
   }
 
-  return data || []
+  // Get profiles for all students using service role
+  const profileIds = students.map(s => s.profile_id).filter(Boolean);
+  let profilesMap: Record<string, any> = {};
+  if (profileIds.length > 0) {
+    const { data: profiles } = await supabaseService
+      .from('profiles')
+      .select('id, first_name, last_name, avatar_url')
+      .in('id', profileIds);
+    if (profiles) {
+      profilesMap = profiles.reduce((acc: any, p: any) => {
+        acc[p.id] = p;
+        return acc;
+      }, {});
+    }
+  }
+
+  return students.map(child => {
+    const p = child.profile_id ? profilesMap[child.profile_id] : null;
+    const nameParts = (child.name || '').trim().split(/\s+/);
+    const fallbackFirst = nameParts[0] || 'Child';
+    const fallbackLast = nameParts.slice(1).join(' ') || '';
+    
+    return {
+      ...child,
+      profile: p,
+      name: p ? `${p.first_name} ${p.last_name}`.trim() : child.name,
+      avatar_url: p?.avatar_url || null
+    };
+  });
 }
 
 export async function addChild(formData: FormData) {

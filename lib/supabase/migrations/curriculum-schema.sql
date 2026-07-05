@@ -213,3 +213,19 @@ ALTER TABLE rewards_tiers ENABLE ROW LEVEL SECURITY;
 ALTER TABLE student_rewards ENABLE ROW LEVEL SECURITY;
 ALTER TABLE academic_terms ENABLE ROW LEVEL SECURITY;
 ALTER TABLE lesson_plans ENABLE ROW LEVEL SECURITY;
+
+-- Worksheets Table
+CREATE TABLE IF NOT EXISTS worksheets (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  subject_id UUID NOT NULL REFERENCES subjects(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  file_url VARCHAR(500) NOT NULL,
+  is_premium BOOLEAN DEFAULT false,
+  age_group_slugs JSONB,
+  is_active BOOLEAN DEFAULT true,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX idx_worksheets_subject ON worksheets(subject_id);
+ALTER TABLE worksheets ENABLE ROW LEVEL SECURITY;

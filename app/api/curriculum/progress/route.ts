@@ -199,12 +199,45 @@ export async function POST(request: Request) {
     }
 
     // Update student stats if completed
-    if (completed && starsEarned) {
-      const newStars = (currentStudent?.total_stars || 0) + starsEarned
+    if (completed) {
+      const { data: previousProgress } = await supabaseService
+        .from('student_progress')
+        .select('completed_at')
+        .eq('student_id', resolvedStudentId)
+        .neq('lesson_id', lessonId)
+        .not('completed_at', 'is', null)
+        .order('completed_at', { ascending: false })
+        .limit(1)
+
+      let newStreak = currentStudent?.current_streak || 0
+      const now = new Date()
+
+      if (previousProgress && previousProgress.length > 0 && previousProgress[0].completed_at) {
+        const lastCompleted = new Date(previousProgress[0].completed_at)
+        const diffDays = Math.floor((now.getTime() - lastCompleted.getTime()) / (1000 * 3600 * 24))
+        
+        if (diffDays === 1) {
+          // It was yesterday, increment streak
+          newStreak += 1
+        } else if (diffDays > 1) {
+          // Missed a day, reset streak
+          newStreak = 1
+        }
+        // If 0 (same day), keep it same
+      } else {
+        // First completion ever
+        newStreak = 1
+      }
+
+      const newStars = (currentStudent?.total_stars || 0) + (starsEarned || 0)
+      const newBadges = Math.floor(newStars / 50) // 1 badge every 50 stars
+
       await supabaseService
         .from('students')
         .update({
           total_stars: newStars,
+          total_badges: newBadges,
+          current_streak: newStreak
         })
         .eq('id', resolvedStudentId)
     }

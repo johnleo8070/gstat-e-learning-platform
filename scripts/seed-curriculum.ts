@@ -133,6 +133,39 @@ async function main() {
       }
     }
 
+    // 6. Seed Worksheets
+    console.log('Inserting Worksheets...');
+    if (data.worksheets) {
+      for (const worksheet of data.worksheets) {
+        const subject_id = subjectMap.get(worksheet.subject_slug);
+        if (!subject_id) throw new Error(`Subject not found for slug: ${worksheet.subject_slug}`);
+
+        const worksheetData = {
+          subject_id,
+          title: worksheet.title,
+          description: worksheet.description,
+          file_url: worksheet.file_url,
+          is_premium: worksheet.is_premium,
+          age_group_slugs: worksheet.age_group_slugs,
+        };
+
+        const { data: existingWorksheet } = await supabase
+          .from('worksheets')
+          .select('id')
+          .eq('title', worksheet.title)
+          .eq('subject_id', subject_id)
+          .single();
+
+        if (existingWorksheet) {
+          const { error } = await supabase.from('worksheets').update(worksheetData).eq('id', existingWorksheet.id);
+          if (error) throw new Error(`Worksheet Update Error: ${error.message}`);
+        } else {
+          const { error } = await supabase.from('worksheets').insert(worksheetData);
+          if (error) throw new Error(`Worksheet Insert Error: ${error.message}`);
+        }
+      }
+    }
+
     console.log('✅ Seeding completed successfully!');
   } catch (err) {
     console.error('❌ Seeding failed:', err);

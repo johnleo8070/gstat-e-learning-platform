@@ -6,7 +6,10 @@
       "min_age_months": 24,
       "max_age_months": 36,
       "description": "Age 2-3: Early exploration and discovery",
-      "learning_outcomes": ["Basic motor skills", "Simple word recognition"]
+      "learning_outcomes": [
+        "Basic motor skills",
+        "Simple word recognition"
+      ]
     },
     {
       "name": "Preschool",
@@ -14,7 +17,11 @@
       "min_age_months": 36,
       "max_age_months": 48,
       "description": "Age 3-4: Foundational learning and play",
-      "learning_outcomes": ["Alphabet recognition", "Counting 1-10", "Color identification"]
+      "learning_outcomes": [
+        "Alphabet recognition",
+        "Counting 1-10",
+        "Color identification"
+      ]
     }
   ],
   "subjects": [
@@ -112,7 +119,12 @@
       "age_level": "beginner",
       "content": {
         "learningObjective": "Recognize the uppercase and lowercase letter A, identify its sound, and match it with words like Apple and Ant.",
-        "keyVocabulary": ["Apple", "Ant", "Alligator", "Arrow"],
+        "keyVocabulary": [
+          "Apple",
+          "Ant",
+          "Alligator",
+          "Arrow"
+        ],
         "teacherExplanation": "Today we are going to learn the first letter of the alphabet, the letter A! The letter A makes an 'ah' sound, like when you bite into a juicy apple.",
         "storytellingScript": "Once upon a time, there was an adventurous alligator named Andy. Andy loved to eat apples!",
         "cartoonVideoScript": "[Scene opens in a sunny forest. Andy the Alligator is holding a bright red apple. Text on screen: A is for Apple. Andy takes a bite and says 'Ah! Ah! Apple!']",
@@ -122,10 +134,26 @@
           "title": "Find the Letter A",
           "instructions": "Click on all the balloons that have the letter A!",
           "items": [
-            { "id": 1, "text": "A", "isCorrect": true },
-            { "id": 2, "text": "B", "isCorrect": false },
-            { "id": 3, "text": "a", "isCorrect": true },
-            { "id": 4, "text": "C", "isCorrect": false }
+            {
+              "id": 1,
+              "text": "A",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "a",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "C",
+              "isCorrect": false
+            }
           ]
         },
         "dragAndDropActivity": {
@@ -133,36 +161,71 @@
           "title": "Match the A Words",
           "instructions": "Drag the objects to the letter A basket if they start with the 'ah' sound.",
           "draggables": [
-            { "id": "apple", "name": "Apple", "matches": "A_Basket" },
-            { "id": "ball", "name": "Ball", "matches": "Other" },
-            { "id": "ant", "name": "Ant", "matches": "A_Basket" }
+            {
+              "id": "apple",
+              "name": "Apple",
+              "matches": "A_Basket"
+            },
+            {
+              "id": "ball",
+              "name": "Ball",
+              "matches": "Other"
+            },
+            {
+              "id": "ant",
+              "name": "Ant",
+              "matches": "A_Basket"
+            }
           ]
         },
         "quiz": {
           "questions": [
             {
               "question": "Which of these words starts with the letter A?",
-              "options": ["Ball", "Apple", "Cat", "Dog"],
+              "options": [
+                "Ball",
+                "Apple",
+                "Cat",
+                "Dog"
+              ],
               "correctAnswer": 1
             },
             {
               "question": "What sound does the letter A make?",
-              "options": ["Buh", "Sss", "Ah", "Mmm"],
+              "options": [
+                "Buh",
+                "Sss",
+                "Ah",
+                "Mmm"
+              ],
               "correctAnswer": 2
             },
             {
               "question": "Is 'A' the first letter of the alphabet?",
-              "options": ["Yes", "No"],
+              "options": [
+                "Yes",
+                "No"
+              ],
               "correctAnswer": 0
             },
             {
               "question": "Which animal starts with A?",
-              "options": ["Elephant", "Tiger", "Alligator", "Monkey"],
+              "options": [
+                "Elephant",
+                "Tiger",
+                "Alligator",
+                "Monkey"
+              ],
               "correctAnswer": 2
             },
             {
               "question": "Select the lowercase letter A:",
-              "options": ["b", "c", "a", "d"],
+              "options": [
+                "b",
+                "c",
+                "a",
+                "d"
+              ],
               "correctAnswer": 2
             }
           ]
@@ -172,450 +235,1010 @@
         "progressTrackingCriteria": "Must score at least 4/5 on the quiz and complete the drag-and-drop activity."
       }
     },
-  {
-    "subject_slug": "english",
-    "unit_title": "Alphabet Recognition",
-    "title": "Letter B",
-    "slug": "letter-b",
-    "description": "Learn the letter B, how it sounds, and words that start with B.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 2,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Recognize the uppercase and lowercase letter B, identify its 'buh' sound, and match it with words like Ball and Bear.",
-      "keyVocabulary": ["Ball", "Bear", "Banana", "Boat"],
-      "teacherExplanation": "Next up is the letter B! To make the 'buh' sound, press your lips together and then pop them open, like a bubble popping!",
-      "storytellingScript": "Barnaby Bear loved to bounce his big blue ball. One day, he brought his ball onto a boat to eat a banana!",
-      "cartoonVideoScript": "[Scene: A park. Barnaby Bear is bouncing a ball. Text: B is for Ball. Sound: 'Buh-Buh-Ball'. Barnaby eats a banana and says 'Buh-Buh-Banana!']",
-      "voiceNarrationScript": "Hi there! I'm Professor Panda. Let's learn the letter B. Can you say 'B'?",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Find the Letter B",
-        "instructions": "Click on all the bubbles that have the letter B!",
-        "items": [
-          { "id": 1, "text": "B", "isCorrect": true },
-          { "id": 2, "text": "D", "isCorrect": false },
-          { "id": 3, "text": "b", "isCorrect": true },
-          { "id": 4, "text": "P", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Match the B Words",
-        "instructions": "Drag the items to the bear's backpack if they start with the 'buh' sound.",
-        "draggables": [
-          { "id": "ball", "name": "Ball", "matches": "B_Backpack" },
-          { "id": "apple", "name": "Apple", "matches": "Other" },
-          { "id": "banana", "name": "Banana", "matches": "B_Backpack" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "Which of these words starts with the letter B?",
-            "options": ["Ant", "Ball", "Cat", "Egg"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "What sound does the letter B make?",
-            "options": ["Cuh", "Ah", "Buh", "Duh"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Which fruit starts with B?",
-            "options": ["Banana", "Apple", "Grapes", "Orange"],
-            "correctAnswer": 0
-          },
-          {
-            "question": "Find the uppercase letter B:",
-            "options": ["b", "P", "B", "D"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Does 'Bear' start with the letter B?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Alphabet Explorer",
-      "parentTakeHomeActivity": "Have your child blow bubbles and say 'Buh' every time a bubble pops. Look for the letter B on cereal boxes.",
-      "progressTrackingCriteria": "Must score at least 4/5 on the quiz and complete the bubble-click activity."
+    {
+      "subject_slug": "english",
+      "unit_title": "Alphabet Recognition",
+      "title": "Letter B",
+      "slug": "letter-b",
+      "description": "Learn the letter B, how it sounds, and words that start with B.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 2,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the uppercase and lowercase letter B, identify its 'buh' sound, and match it with words like Ball and Bear.",
+        "keyVocabulary": [
+          "Ball",
+          "Bear",
+          "Banana",
+          "Boat"
+        ],
+        "teacherExplanation": "Next up is the letter B! To make the 'buh' sound, press your lips together and then pop them open, like a bubble popping!",
+        "storytellingScript": "Barnaby Bear loved to bounce his big blue ball. One day, he brought his ball onto a boat to eat a banana!",
+        "cartoonVideoScript": "[Scene: A park. Barnaby Bear is bouncing a ball. Text: B is for Ball. Sound: 'Buh-Buh-Ball'. Barnaby eats a banana and says 'Buh-Buh-Banana!']",
+        "voiceNarrationScript": "Hi there! I'm Professor Panda. Let's learn the letter B. Can you say 'B'?",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Find the Letter B",
+          "instructions": "Click on all the bubbles that have the letter B!",
+          "items": [
+            {
+              "id": 1,
+              "text": "B",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "D",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "b",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "P",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Match the B Words",
+          "instructions": "Drag the items to the bear's backpack if they start with the 'buh' sound.",
+          "draggables": [
+            {
+              "id": "ball",
+              "name": "Ball",
+              "matches": "B_Backpack"
+            },
+            {
+              "id": "apple",
+              "name": "Apple",
+              "matches": "Other"
+            },
+            {
+              "id": "banana",
+              "name": "Banana",
+              "matches": "B_Backpack"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which of these words starts with the letter B?",
+              "options": [
+                "Ant",
+                "Ball",
+                "Cat",
+                "Egg"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "What sound does the letter B make?",
+              "options": [
+                "Cuh",
+                "Ah",
+                "Buh",
+                "Duh"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Which fruit starts with B?",
+              "options": [
+                "Banana",
+                "Apple",
+                "Grapes",
+                "Orange"
+              ],
+              "correctAnswer": 0
+            },
+            {
+              "question": "Find the uppercase letter B:",
+              "options": [
+                "b",
+                "P",
+                "B",
+                "D"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Does 'Bear' start with the letter B?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Alphabet Explorer",
+        "parentTakeHomeActivity": "Have your child blow bubbles and say 'Buh' every time a bubble pops. Look for the letter B on cereal boxes.",
+        "progressTrackingCriteria": "Must score at least 4/5 on the quiz and complete the bubble-click activity."
+      }
+    },
+    {
+      "subject_slug": "english",
+      "unit_title": "Alphabet Recognition",
+      "title": "Letter C",
+      "slug": "letter-c",
+      "description": "Learn the letter C, its 'cuh' sound, and words like Cat and Cup.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 3,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the uppercase and lowercase letter C, identify the hard 'c' sound, and recognize C words.",
+        "keyVocabulary": [
+          "Cat",
+          "Cup",
+          "Car",
+          "Cake"
+        ],
+        "teacherExplanation": "The letter C makes a 'cuh' sound. It's like a little cough in the back of your throat. Cuh, cuh, cat!",
+        "storytellingScript": "Candy Cat drove a cool car to a party. She brought a giant chocolate cake and a colorful cup!",
+        "cartoonVideoScript": "[Scene: A kitchen. Candy Cat is wearing a party hat. Text: C is for Cat. She points to a cake. Text: C is for Cake. 'Cuh-Cuh-Cake!']",
+        "voiceNarrationScript": "Ready for more? It's Professor Panda! Let's make the 'C' sound together. Cuh!",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Spot the Cookies",
+          "instructions": "Click on the cookies that have the letter C on them!",
+          "items": [
+            {
+              "id": 1,
+              "text": "C",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "O",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "c",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "G",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Fill the Cup",
+          "instructions": "Drag the pictures to the giant Cup if they start with the 'Cuh' sound.",
+          "draggables": [
+            {
+              "id": "car",
+              "name": "Car",
+              "matches": "C_Cup"
+            },
+            {
+              "id": "dog",
+              "name": "Dog",
+              "matches": "Other"
+            },
+            {
+              "id": "cat",
+              "name": "Cat",
+              "matches": "C_Cup"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which animal starts with C?",
+              "options": [
+                "Elephant",
+                "Cat",
+                "Bear",
+                "Alligator"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "What sound does the letter C make in 'Cup'?",
+              "options": [
+                "Sss",
+                "Buh",
+                "Cuh",
+                "Mmm"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Find the lowercase letter C:",
+              "options": [
+                "o",
+                "e",
+                "c",
+                "a"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Which of these do you drive?",
+              "options": [
+                "Cake",
+                "Car",
+                "Cup",
+                "Cat"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Is 'C' the letter after 'B'?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Alphabet Explorer",
+        "parentTakeHomeActivity": "Make the letter C with your hand by curving your fingers. Bake or draw a 'C' shaped cookie.",
+        "progressTrackingCriteria": "Must score at least 4/5 on the quiz."
+      }
+    },
+    {
+      "subject_slug": "english",
+      "unit_title": "Alphabet Recognition",
+      "title": "Letter D",
+      "slug": "letter-d",
+      "description": "Learn the letter D, the 'duh' sound, and words like Dog and Duck.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 4,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Distinguish the letter D from other letters, vocalize the 'd' sound, and identify D-initial words.",
+        "keyVocabulary": [
+          "Dog",
+          "Duck",
+          "Drum",
+          "Door"
+        ],
+        "teacherExplanation": "The letter D is a bouncy sound! Duh-duh-duh. Like you are tapping on a drum!",
+        "storytellingScript": "Danny the Dog and Daisy the Duck were best friends. They loved to play the drum by the garden door.",
+        "cartoonVideoScript": "[Scene: A yard. Danny Dog is tapping a drum. A duck waddles by. Text: D is for Dog. Sound: 'Duh-Duh-Dog'. Danny points to the Duck. 'Duh-Duh-Duck!']",
+        "voiceNarrationScript": "Professor Panda here! Can you tap your toes and say 'Duh'? That's the sound of D!",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Duck Pond Search",
+          "instructions": "Click on the ducks that have the letter D on them!",
+          "items": [
+            {
+              "id": 1,
+              "text": "D",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "B",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "d",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "P",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Door Delivery",
+          "instructions": "Drag the items to the Door if they start with the 'D' sound.",
+          "draggables": [
+            {
+              "id": "drum",
+              "name": "Drum",
+              "matches": "D_Door"
+            },
+            {
+              "id": "apple",
+              "name": "Apple",
+              "matches": "Other"
+            },
+            {
+              "id": "dog",
+              "name": "Dog",
+              "matches": "D_Door"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "What animal says 'Quack' and starts with D?",
+              "options": [
+                "Dog",
+                "Cat",
+                "Duck",
+                "Bear"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "What sound does D make?",
+              "options": [
+                "Ah",
+                "Buh",
+                "Duh",
+                "Cuh"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Which of these is a musical instrument?",
+              "options": [
+                "Door",
+                "Drum",
+                "Dog",
+                "Duck"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Find the uppercase D:",
+              "options": [
+                "B",
+                "P",
+                "D",
+                "O"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Is the word 'Dog' starting with D?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Alphabet Explorer",
+        "parentTakeHomeActivity": "Play a game of 'Duck, Duck, Goose' but say 'Duh, Duh, D' instead.",
+        "progressTrackingCriteria": "Must complete the Duck Pond activity and score 4/5 on the quiz."
+      }
+    },
+    {
+      "subject_slug": "english",
+      "unit_title": "Alphabet Recognition",
+      "title": "Letter E",
+      "slug": "letter-e",
+      "description": "Learn the letter E, the 'eh' sound, and words like Egg and Elephant.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 5,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the letter E and its short vowel sound 'eh'.",
+        "keyVocabulary": [
+          "Egg",
+          "Elephant",
+          "Elbow",
+          "Envelope"
+        ],
+        "teacherExplanation": "The letter E makes an 'eh' sound. Imagine you are cracking an egg! Eh, eh, egg.",
+        "storytellingScript": "Eddie the Elephant found a tiny egg. He carried it carefully on his elbow while holding an envelope.",
+        "cartoonVideoScript": "[Scene: A savanna. Eddie Elephant is holding an envelope. Text: E is for Elephant. He points to an egg in a nest. 'Eh-Eh-Egg!']",
+        "voiceNarrationScript": "Hi! Professor Panda here. Open your mouth a little and say 'Eh'. That's the sound of E!",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Elephant's Peanuts",
+          "instructions": "Click on the peanuts that have the letter E on them!",
+          "items": [
+            {
+              "id": 1,
+              "text": "E",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "F",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "e",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "L",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Eddie's Trunk",
+          "instructions": "Drag the items to Eddie the Elephant if they start with 'Eh'.",
+          "draggables": [
+            {
+              "id": "egg",
+              "name": "Egg",
+              "matches": "Eddie"
+            },
+            {
+              "id": "ball",
+              "name": "Ball",
+              "matches": "Other"
+            },
+            {
+              "id": "envelope",
+              "name": "Envelope",
+              "matches": "Eddie"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which of these is a very big animal?",
+              "options": [
+                "Ant",
+                "Cat",
+                "Elephant",
+                "Dog"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "What sound does the letter E make in 'Egg'?",
+              "options": [
+                "Ah",
+                "Eh",
+                "Buh",
+                "Duh"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Which part of your arm starts with E?",
+              "options": [
+                "Hand",
+                "Elbow",
+                "Finger",
+                "Shoulder"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Find the lowercase letter e:",
+              "options": [
+                "a",
+                "c",
+                "o",
+                "e"
+              ],
+              "correctAnswer": 3
+            },
+            {
+              "question": "Is 'Envelope' an E word?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Alphabet Explorer",
+        "parentTakeHomeActivity": "Point to your elbow and say 'E is for Elbow'. Look for the letter E on street signs.",
+        "progressTrackingCriteria": "Must score 4/5 on the quiz."
+      }
+    },
+    {
+      "subject_slug": "english",
+      "unit_title": "Alphabet Recognition",
+      "title": "Letter F",
+      "slug": "letter-f",
+      "description": "Learn the letter F, the 'fuh' sound, and words like Fish and Frog.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 6,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Identify the letter F, its sound 'fff', and match it with F words.",
+        "keyVocabulary": [
+          "Fish",
+          "Frog",
+          "Fan",
+          "Flower"
+        ],
+        "teacherExplanation": "To make the 'fff' sound, put your top teeth on your bottom lip and blow air out. Like a little breeze!",
+        "storytellingScript": "Finny the Fish and Freddy the Frog played near a pretty flower. When it got hot, they used a fan to stay cool.",
+        "cartoonVideoScript": "[Scene: A pond. Freddy the Frog is jumping. Text: F is for Frog. He jumps on a flower. Text: F is for Flower. 'Fff-Fff-Flower!']",
+        "voiceNarrationScript": "It's Professor Panda! Let's blow some air and say 'Fff'. Can you say Fish?",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Flower Garden",
+          "instructions": "Click on the flowers that have the letter F on them!",
+          "items": [
+            {
+              "id": 1,
+              "text": "F",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "E",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "f",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "T",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Fish Tank",
+          "instructions": "Drag the items to the Fish Tank if they start with the 'F' sound.",
+          "draggables": [
+            {
+              "id": "fish",
+              "name": "Fish",
+              "matches": "Tank"
+            },
+            {
+              "id": "fan",
+              "name": "Fan",
+              "matches": "Tank"
+            },
+            {
+              "id": "cup",
+              "name": "Cup",
+              "matches": "Other"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which animal lives in water and starts with F?",
+              "options": [
+                "Dog",
+                "Fish",
+                "Cat",
+                "Bear"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "What sound does the letter F make?",
+              "options": [
+                "Buh",
+                "Cuh",
+                "Fuh",
+                "Ah"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Which one of these smells nice and starts with F?",
+              "options": [
+                "Fan",
+                "Flower",
+                "Fish",
+                "Frog"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Select the lowercase letter f:",
+              "options": [
+                "t",
+                "l",
+                "f",
+                "i"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "Is 'Frog' the letter after 'E'?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Alphabet Explorer",
+        "parentTakeHomeActivity": "Go outside and see if you can find any flowers. Say 'F is for Flower' every time you see one.",
+        "progressTrackingCriteria": "Must score at least 4/5 on the quiz and complete the fish tank activity."
+      }
+    },
+    {
+      "subject_slug": "math",
+      "unit_title": "Numbers 1 to 10",
+      "title": "Number 1",
+      "slug": "number-1",
+      "description": "Learn the number 1 and how to count single objects.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 1,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the number 1 and understand it represents a single object.",
+        "keyVocabulary": [
+          "One",
+          "Single",
+          "Only"
+        ],
+        "teacherExplanation": "Today we are learning the number 1! Hold up one finger. You have one nose and one mouth!",
+        "storytellingScript": "Ollie the Owl lived in one big tree. He had exactly one favorite hat that he wore every single day.",
+        "cartoonVideoScript": "[Scene: Ollie is wearing his hat. Text: 1 is for One. A giant number 1 appears. Sound: 'One!']",
+        "voiceNarrationScript": "Hi! Professor Panda here. Can you show me one finger? Great job! That's the number one.",
+        "interactiveActivity": {
+          "type": "click-to-learn",
+          "title": "Find the 1",
+          "instructions": "Click on the blocks that have the number 1 on them!",
+          "items": [
+            {
+              "id": 1,
+              "text": "1",
+              "isCorrect": true
+            },
+            {
+              "id": 2,
+              "text": "2",
+              "isCorrect": false
+            },
+            {
+              "id": 3,
+              "text": "1",
+              "isCorrect": true
+            },
+            {
+              "id": 4,
+              "text": "3",
+              "isCorrect": false
+            }
+          ]
+        },
+        "dragAndDropActivity": {
+          "type": "matching",
+          "title": "Give Ollie One Apple",
+          "instructions": "Drag exactly ONE apple to Ollie the Owl.",
+          "draggables": [
+            {
+              "id": "apple_1",
+              "name": "Apple",
+              "matches": "Ollie"
+            },
+            {
+              "id": "apple_2",
+              "name": "Apple",
+              "matches": "Other"
+            },
+            {
+              "id": "apple_3",
+              "name": "Apple",
+              "matches": "Other"
+            }
+          ]
+        },
+        "quiz": {
+          "questions": [
+            {
+              "question": "How many noses do you have?",
+              "options": [
+                "Two",
+                "One",
+                "Three",
+                "Four"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Find the number one:",
+              "options": [
+                "2",
+                "3",
+                "1",
+                "4"
+              ],
+              "correctAnswer": 2
+            },
+            {
+              "question": "If you have one apple, how many apples is that?",
+              "options": [
+                "1",
+                "2"
+              ],
+              "correctAnswer": 0
+            },
+            {
+              "question": "Which of these words means '1'?",
+              "options": [
+                "Two",
+                "One",
+                "Zero",
+                "Five"
+              ],
+              "correctAnswer": 1
+            },
+            {
+              "question": "Hold up one finger. Is that the number 1?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        },
+        "rewardBadgeName": "Number Ninja",
+        "parentTakeHomeActivity": "Ask your child to bring you 'one' toy from their room.",
+        "progressTrackingCriteria": "Must score at least 4/5 on the quiz."
+      }
+    },
+    {
+      "subject_slug": "math",
+      "unit_title": "Numbers 1 to 10",
+      "title": "Number 2",
+      "slug": "number-2",
+      "description": "Learn the number 2 and how to count objects in pairs.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 2,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the number 2 and count pairs of objects.",
+        "keyVocabulary": [
+          "Two",
+          "Pair",
+          "Both"
+        ],
+        "quiz": {
+          "questions": [
+            {
+              "question": "How many eyes do you have?",
+              "options": [
+                "One",
+                "Two",
+                "Three",
+                "Four"
+              ],
+              "correctAnswer": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "subject_slug": "math",
+      "unit_title": "Numbers 1 to 10",
+      "title": "Number 3",
+      "slug": "number-3",
+      "description": "Learn the number 3.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 3,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Recognize the number 3.",
+        "keyVocabulary": [
+          "Three"
+        ],
+        "quiz": {
+          "questions": [
+            {
+              "question": "What comes after 2?",
+              "options": [
+                "4",
+                "3",
+                "1",
+                "5"
+              ],
+              "correctAnswer": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "subject_slug": "science",
+      "unit_title": "Exploring Colors",
+      "title": "The Color Red",
+      "slug": "color-red",
+      "description": "Learn about the color red and find red objects.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 1,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Identify the color red.",
+        "keyVocabulary": [
+          "Red",
+          "Apple",
+          "Firetruck"
+        ],
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which of these is usually red?",
+              "options": [
+                "Sky",
+                "Grass",
+                "Apple",
+                "Sun"
+              ],
+              "correctAnswer": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "subject_slug": "science",
+      "unit_title": "Exploring Colors",
+      "title": "The Color Blue",
+      "slug": "color-blue",
+      "description": "Learn about the color blue.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 2,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Identify the color blue.",
+        "keyVocabulary": [
+          "Blue",
+          "Sky",
+          "Ocean"
+        ],
+        "quiz": {
+          "questions": [
+            {
+              "question": "Which of these is usually blue?",
+              "options": [
+                "Sky",
+                "Grass",
+                "Apple",
+                "Sun"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "subject_slug": "coding",
+      "unit_title": "Logic & Sequences",
+      "title": "First Step",
+      "slug": "first-step",
+      "description": "Learn how sequences work.",
+      "duration_minutes": 10,
+      "difficulty_level": 1,
+      "stars_reward": 15,
+      "lesson_order": 1,
+      "lesson_type": "activity",
+      "age_level": "beginner",
+      "content": {
+        "learningObjective": "Understand ordering steps.",
+        "keyVocabulary": [
+          "First",
+          "Next",
+          "Last"
+        ],
+        "quiz": {
+          "questions": [
+            {
+              "question": "When making a sandwich, what do you need first?",
+              "options": [
+                "Bread",
+                "Eat it",
+                "Cut it"
+              ],
+              "correctAnswer": 0
+            }
+          ]
+        }
+      }
     }
-  },
-  {
-    "subject_slug": "english",
-    "unit_title": "Alphabet Recognition",
-    "title": "Letter C",
-    "slug": "letter-c",
-    "description": "Learn the letter C, its 'cuh' sound, and words like Cat and Cup.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 3,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Recognize the uppercase and lowercase letter C, identify the hard 'c' sound, and recognize C words.",
-      "keyVocabulary": ["Cat", "Cup", "Car", "Cake"],
-      "teacherExplanation": "The letter C makes a 'cuh' sound. It's like a little cough in the back of your throat. Cuh, cuh, cat!",
-      "storytellingScript": "Candy Cat drove a cool car to a party. She brought a giant chocolate cake and a colorful cup!",
-      "cartoonVideoScript": "[Scene: A kitchen. Candy Cat is wearing a party hat. Text: C is for Cat. She points to a cake. Text: C is for Cake. 'Cuh-Cuh-Cake!']",
-      "voiceNarrationScript": "Ready for more? It's Professor Panda! Let's make the 'C' sound together. Cuh!",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Spot the Cookies",
-        "instructions": "Click on the cookies that have the letter C on them!",
-        "items": [
-          { "id": 1, "text": "C", "isCorrect": true },
-          { "id": 2, "text": "O", "isCorrect": false },
-          { "id": 3, "text": "c", "isCorrect": true },
-          { "id": 4, "text": "G", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Fill the Cup",
-        "instructions": "Drag the pictures to the giant Cup if they start with the 'Cuh' sound.",
-        "draggables": [
-          { "id": "car", "name": "Car", "matches": "C_Cup" },
-          { "id": "dog", "name": "Dog", "matches": "Other" },
-          { "id": "cat", "name": "Cat", "matches": "C_Cup" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "Which animal starts with C?",
-            "options": ["Elephant", "Cat", "Bear", "Alligator"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "What sound does the letter C make in 'Cup'?",
-            "options": ["Sss", "Buh", "Cuh", "Mmm"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Find the lowercase letter C:",
-            "options": ["o", "e", "c", "a"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Which of these do you drive?",
-            "options": ["Cake", "Car", "Cup", "Cat"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Is 'C' the letter after 'B'?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Alphabet Explorer",
-      "parentTakeHomeActivity": "Make the letter C with your hand by curving your fingers. Bake or draw a 'C' shaped cookie.",
-      "progressTrackingCriteria": "Must score at least 4/5 on the quiz."
+  ],
+  "worksheets": [
+    {
+      "subject_slug": "english",
+      "title": "Alphabet Tracing A-E",
+      "description": "Trace the first 5 letters of the alphabet.",
+      "file_url": "/worksheets/alphabet-a-e.pdf",
+      "is_premium": false,
+      "age_group_slugs": [
+        "toddler",
+        "preschool"
+      ]
+    },
+    {
+      "subject_slug": "english",
+      "title": "Alphabet Tracing F-J",
+      "description": "Trace the next 5 letters.",
+      "file_url": "/worksheets/alphabet-f-j.pdf",
+      "is_premium": true,
+      "age_group_slugs": [
+        "preschool",
+        "kindergarten"
+      ]
+    },
+    {
+      "subject_slug": "math",
+      "title": "Counting 1 to 5",
+      "description": "Count the animals and write the number.",
+      "file_url": "/worksheets/counting-1-5.pdf",
+      "is_premium": false,
+      "age_group_slugs": [
+        "toddler",
+        "preschool"
+      ]
+    },
+    {
+      "subject_slug": "science",
+      "title": "Coloring the Rainbow",
+      "description": "Color the rainbow with the correct colors.",
+      "file_url": "/worksheets/rainbow-colors.pdf",
+      "is_premium": true,
+      "age_group_slugs": [
+        "preschool"
+      ]
+    },
+    {
+      "subject_slug": "coding",
+      "title": "Draw the Path",
+      "description": "Draw the arrows to help the robot reach the battery.",
+      "file_url": "/worksheets/draw-path.pdf",
+      "is_premium": true,
+      "age_group_slugs": [
+        "kindergarten",
+        "primary_1"
+      ]
     }
-  },
-  {
-    "subject_slug": "english",
-    "unit_title": "Alphabet Recognition",
-    "title": "Letter D",
-    "slug": "letter-d",
-    "description": "Learn the letter D, the 'duh' sound, and words like Dog and Duck.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 4,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Distinguish the letter D from other letters, vocalize the 'd' sound, and identify D-initial words.",
-      "keyVocabulary": ["Dog", "Duck", "Drum", "Door"],
-      "teacherExplanation": "The letter D is a bouncy sound! Duh-duh-duh. Like you are tapping on a drum!",
-      "storytellingScript": "Danny the Dog and Daisy the Duck were best friends. They loved to play the drum by the garden door.",
-      "cartoonVideoScript": "[Scene: A yard. Danny Dog is tapping a drum. A duck waddles by. Text: D is for Dog. Sound: 'Duh-Duh-Dog'. Danny points to the Duck. 'Duh-Duh-Duck!']",
-      "voiceNarrationScript": "Professor Panda here! Can you tap your toes and say 'Duh'? That's the sound of D!",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Duck Pond Search",
-        "instructions": "Click on the ducks that have the letter D on them!",
-        "items": [
-          { "id": 1, "text": "D", "isCorrect": true },
-          { "id": 2, "text": "B", "isCorrect": false },
-          { "id": 3, "text": "d", "isCorrect": true },
-          { "id": 4, "text": "P", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Door Delivery",
-        "instructions": "Drag the items to the Door if they start with the 'D' sound.",
-        "draggables": [
-          { "id": "drum", "name": "Drum", "matches": "D_Door" },
-          { "id": "apple", "name": "Apple", "matches": "Other" },
-          { "id": "dog", "name": "Dog", "matches": "D_Door" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "What animal says 'Quack' and starts with D?",
-            "options": ["Dog", "Cat", "Duck", "Bear"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "What sound does D make?",
-            "options": ["Ah", "Buh", "Duh", "Cuh"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Which of these is a musical instrument?",
-            "options": ["Door", "Drum", "Dog", "Duck"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Find the uppercase D:",
-            "options": ["B", "P", "D", "O"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Is the word 'Dog' starting with D?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Alphabet Explorer",
-      "parentTakeHomeActivity": "Play a game of 'Duck, Duck, Goose' but say 'Duh, Duh, D' instead.",
-      "progressTrackingCriteria": "Must complete the Duck Pond activity and score 4/5 on the quiz."
-    }
-  },
-  {
-    "subject_slug": "english",
-    "unit_title": "Alphabet Recognition",
-    "title": "Letter E",
-    "slug": "letter-e",
-    "description": "Learn the letter E, the 'eh' sound, and words like Egg and Elephant.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 5,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Recognize the letter E and its short vowel sound 'eh'.",
-      "keyVocabulary": ["Egg", "Elephant", "Elbow", "Envelope"],
-      "teacherExplanation": "The letter E makes an 'eh' sound. Imagine you are cracking an egg! Eh, eh, egg.",
-      "storytellingScript": "Eddie the Elephant found a tiny egg. He carried it carefully on his elbow while holding an envelope.",
-      "cartoonVideoScript": "[Scene: A savanna. Eddie Elephant is holding an envelope. Text: E is for Elephant. He points to an egg in a nest. 'Eh-Eh-Egg!']",
-      "voiceNarrationScript": "Hi! Professor Panda here. Open your mouth a little and say 'Eh'. That's the sound of E!",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Elephant's Peanuts",
-        "instructions": "Click on the peanuts that have the letter E on them!",
-        "items": [
-          { "id": 1, "text": "E", "isCorrect": true },
-          { "id": 2, "text": "F", "isCorrect": false },
-          { "id": 3, "text": "e", "isCorrect": true },
-          { "id": 4, "text": "L", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Eddie's Trunk",
-        "instructions": "Drag the items to Eddie the Elephant if they start with 'Eh'.",
-        "draggables": [
-          { "id": "egg", "name": "Egg", "matches": "Eddie" },
-          { "id": "ball", "name": "Ball", "matches": "Other" },
-          { "id": "envelope", "name": "Envelope", "matches": "Eddie" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "Which of these is a very big animal?",
-            "options": ["Ant", "Cat", "Elephant", "Dog"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "What sound does the letter E make in 'Egg'?",
-            "options": ["Ah", "Eh", "Buh", "Duh"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Which part of your arm starts with E?",
-            "options": ["Hand", "Elbow", "Finger", "Shoulder"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Find the lowercase letter e:",
-            "options": ["a", "c", "o", "e"],
-            "correctAnswer": 3
-          },
-          {
-            "question": "Is 'Envelope' an E word?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Alphabet Explorer",
-      "parentTakeHomeActivity": "Point to your elbow and say 'E is for Elbow'. Look for the letter E on street signs.",
-      "progressTrackingCriteria": "Must score 4/5 on the quiz."
-    }
-  },
-  {
-    "subject_slug": "english",
-    "unit_title": "Alphabet Recognition",
-    "title": "Letter F",
-    "slug": "letter-f",
-    "description": "Learn the letter F, the 'fuh' sound, and words like Fish and Frog.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 6,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Identify the letter F, its sound 'fff', and match it with F words.",
-      "keyVocabulary": ["Fish", "Frog", "Fan", "Flower"],
-      "teacherExplanation": "To make the 'fff' sound, put your top teeth on your bottom lip and blow air out. Like a little breeze!",
-      "storytellingScript": "Finny the Fish and Freddy the Frog played near a pretty flower. When it got hot, they used a fan to stay cool.",
-      "cartoonVideoScript": "[Scene: A pond. Freddy the Frog is jumping. Text: F is for Frog. He jumps on a flower. Text: F is for Flower. 'Fff-Fff-Flower!']",
-      "voiceNarrationScript": "It's Professor Panda! Let's blow some air and say 'Fff'. Can you say Fish?",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Flower Garden",
-        "instructions": "Click on the flowers that have the letter F on them!",
-        "items": [
-          { "id": 1, "text": "F", "isCorrect": true },
-          { "id": 2, "text": "E", "isCorrect": false },
-          { "id": 3, "text": "f", "isCorrect": true },
-          { "id": 4, "text": "T", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Fish Tank",
-        "instructions": "Drag the items to the Fish Tank if they start with the 'F' sound.",
-        "draggables": [
-          { "id": "fish", "name": "Fish", "matches": "Tank" },
-          { "id": "fan", "name": "Fan", "matches": "Tank" },
-          { "id": "cup", "name": "Cup", "matches": "Other" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "Which animal lives in water and starts with F?",
-            "options": ["Dog", "Fish", "Cat", "Bear"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "What sound does the letter F make?",
-            "options": ["Buh", "Cuh", "Fuh", "Ah"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Which one of these smells nice and starts with F?",
-            "options": ["Fan", "Flower", "Fish", "Frog"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Select the lowercase letter f:",
-            "options": ["t", "l", "f", "i"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "Is 'Frog' the letter after 'E'?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Alphabet Explorer",
-      "parentTakeHomeActivity": "Go outside and see if you can find any flowers. Say 'F is for Flower' every time you see one.",
-      "progressTrackingCriteria": "Must score at least 4/5 on the quiz and complete the fish tank activity."
-    }
-  },
-  {
-    "subject_slug": "math",
-    "unit_title": "Numbers 1 to 10",
-    "title": "Number 1",
-    "slug": "number-1",
-    "description": "Learn the number 1 and how to count single objects.",
-    "duration_minutes": 10,
-    "difficulty_level": 1,
-    "stars_reward": 15,
-    "lesson_order": 1,
-    "lesson_type": "activity",
-    "age_level": "beginner",
-    "content": {
-      "learningObjective": "Recognize the number 1 and understand it represents a single object.",
-      "keyVocabulary": ["One", "Single", "Only"],
-      "teacherExplanation": "Today we are learning the number 1! Hold up one finger. You have one nose and one mouth!",
-      "storytellingScript": "Ollie the Owl lived in one big tree. He had exactly one favorite hat that he wore every single day.",
-      "cartoonVideoScript": "[Scene: Ollie is wearing his hat. Text: 1 is for One. A giant number 1 appears. Sound: 'One!']",
-      "voiceNarrationScript": "Hi! Professor Panda here. Can you show me one finger? Great job! That's the number one.",
-      "interactiveActivity": {
-        "type": "click-to-learn",
-        "title": "Find the 1",
-        "instructions": "Click on the blocks that have the number 1 on them!",
-        "items": [
-          { "id": 1, "text": "1", "isCorrect": true },
-          { "id": 2, "text": "2", "isCorrect": false },
-          { "id": 3, "text": "1", "isCorrect": true },
-          { "id": 4, "text": "3", "isCorrect": false }
-        ]
-      },
-      "dragAndDropActivity": {
-        "type": "matching",
-        "title": "Give Ollie One Apple",
-        "instructions": "Drag exactly ONE apple to Ollie the Owl.",
-        "draggables": [
-          { "id": "apple_1", "name": "Apple", "matches": "Ollie" },
-          { "id": "apple_2", "name": "Apple", "matches": "Other" },
-          { "id": "apple_3", "name": "Apple", "matches": "Other" }
-        ]
-      },
-      "quiz": {
-        "questions": [
-          {
-            "question": "How many noses do you have?",
-            "options": ["Two", "One", "Three", "Four"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Find the number one:",
-            "options": ["2", "3", "1", "4"],
-            "correctAnswer": 2
-          },
-          {
-            "question": "If you have one apple, how many apples is that?",
-            "options": ["1", "2"],
-            "correctAnswer": 0
-          },
-          {
-            "question": "Which of these words means '1'?",
-            "options": ["Two", "One", "Zero", "Five"],
-            "correctAnswer": 1
-          },
-          {
-            "question": "Hold up one finger. Is that the number 1?",
-            "options": ["Yes", "No"],
-            "correctAnswer": 0
-          }
-        ]
-      },
-      "rewardBadgeName": "Number Ninja",
-      "parentTakeHomeActivity": "Ask your child to bring you 'one' toy from their room.",
-      "progressTrackingCriteria": "Must score at least 4/5 on the quiz."
-    }
-  },
-  }
-]
+  ]
 }

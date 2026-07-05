@@ -130,21 +130,31 @@ export default function AdminDashboard() {
 
       setSubscriptions(subscriptionsData || [])
 
-      // Calculate analytics
-      const pendingPaymentsCount = paymentsData?.filter(p => p.status === 'pending').length || 0
-      const approvedPaymentsCount = paymentsData?.filter(p => p.status === 'approved').length || 0
-      const totalRevenue = paymentsData
-        ?.filter(p => p.status === 'approved')
-        .reduce((sum, p) => sum + (p.amount || 0), 0) || 0
       const activeSubscriptions = subscriptionsData?.filter(s => s.status === 'active').length || 0
 
+      // Calculate student progress stats
+      const { data: studentsStats } = await supabase
+        .from('students')
+        .select('total_stars, current_streak')
+      
+      const totalStars = studentsStats?.reduce((sum, s) => sum + (s.total_stars || 0), 0) || 0
+      const activeStreaks = studentsStats?.filter(s => (s.current_streak || 0) > 0).length || 0
+
+      const { count: completedLessonsCount } = await supabase
+        .from('student_progress')
+        .select('*', { count: 'exact', head: true })
+        .not('completed_at', 'is', null)
+
       setAnalytics({
-        totalParents: parentsData?.length || 0,
+        totalParents: parentProfiles.length || 0,
         totalPayments: paymentsData?.length || 0,
         pendingPayments: pendingPaymentsCount,
         approvedPayments: approvedPaymentsCount,
         totalRevenue,
-        activeSubscriptions
+        activeSubscriptions,
+        totalStars,
+        activeStreaks,
+        completedLessons: completedLessonsCount || 0
       })
     } catch (error) {
       console.error('[v0] Error loading admin data:', error)
@@ -339,6 +349,33 @@ export default function AdminDashboard() {
                       </CardHeader>
                       <CardContent>
                         <div className="text-3xl font-bold">{analytics?.totalPayments || 0}</div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Total Lessons Completed</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-3xl font-bold text-indigo-600">{analytics?.completedLessons || 0}</div>
+                      </CardContent>
+                    </Card>
+
+                    <Card>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Active Streaks</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-3xl font-bold text-green-500">{analytics?.activeStreaks || 0}</div>
+                      </CardContent>
+                    </Card>
+
+                    <Card>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Platform Total Stars</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="text-3xl font-bold text-amber-500">{analytics?.totalStars || 0}</div>
                       </CardContent>
                     </Card>
                   </div>
