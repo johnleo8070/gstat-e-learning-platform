@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { 
-  BookOpen, Trophy, Plus, Star, Target, BarChart3, X, Loader2, Key, Gamepad2, User
+  BookOpen, Trophy, Plus, Star, Target, BarChart3, X, Loader2, Key, Gamepad2, User, BookMarked
 } from "lucide-react"
 import { ChildManagementModal } from "@/components/parent/child-management-modal"
 import { useParentContext } from "@/components/parent/dashboard-shell"
@@ -268,7 +268,13 @@ export default function ParentDashboard() {
                       Play Games
                     </Button>
                   </Link>
-                  <Link href="/dashboard/parent/reports" className="inline-block sm:col-span-2">
+                  <Link href={`/stories`} className="inline-block">
+                    <Button variant="outline" className="w-full bg-gradient-to-r from-purple-500 to-violet-600 text-white border-0 hover:opacity-90 shadow-sm">
+                      <BookMarked className="w-4 h-4 mr-2" />
+                      Toy Stories
+                    </Button>
+                  </Link>
+                  <Link href="/dashboard/parent/reports" className="inline-block">
                     <Button variant="outline" className="w-full shadow-sm">
                       <BarChart3 className="w-4 h-4 mr-2" />
                       View Reports
