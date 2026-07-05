@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,8 +11,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, AlertCircle, Heart, TrendingUp, Bell, Clock, Check } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 
-export default function ParentZonePage() {
+function ParentZoneContent() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const redirectTo = searchParams.get('redirect')
   
   // Shared States
   const [showPassword, setShowPassword] = useState(false)
@@ -53,21 +55,7 @@ export default function ParentZonePage() {
     }
 
     if (data.user) {
-      // Get user profile to verify parent role
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('role')
-        .eq('user_id', data.user.id)
-        .single()
-
-      if (profile?.role !== 'parent') {
-        setError("This login is for parents only.")
-        await supabase.auth.signOut()
-        setIsLoading(false)
-        return
-      }
-
-      router.push('/dashboard/parent')
+      router.push(redirectTo || '/dashboard/parent')
       router.refresh()
     }
   }
@@ -124,7 +112,7 @@ export default function ParentZonePage() {
       } catch (err) {
         console.error('[v0] Error creating parent profile:', err)
       }
-      router.push('/dashboard/parent')
+      router.push(redirectTo || '/dashboard/parent')
     } else {
       setSuccess(true)
     }
@@ -401,33 +389,17 @@ export default function ParentZonePage() {
                 </form>
               </TabsContent>
             </Tabs>
-
-            {/* Divider */}
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border"></div>
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-muted-foreground">or</span>
-              </div>
-            </div>
-
-            {/* Other login options */}
-            <div className="flex gap-3">
-              <Link href="/login" className="flex-1">
-                <Button variant="outline" className="w-full h-10 rounded-xl text-sm">
-                  Student Login
-                </Button>
-              </Link>
-              <Link href="/login/school" className="flex-1">
-                <Button variant="outline" className="w-full h-10 rounded-xl text-sm">
-                  School Login
-                </Button>
-              </Link>
-            </div>
           </CardContent>
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function ParentZonePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ParentZoneContent />
+    </Suspense>
   )
 }

@@ -10,14 +10,14 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Eye, EyeOff, Mail, Lock, ArrowLeft, AlertCircle, GraduationCap, Users } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 
-type LoginRole = "parent" | "admin"
+type LoginRole = "admin"
 
 function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTo = searchParams.get('redirect')
   
-  const [selectedRole, setSelectedRole] = useState<LoginRole>("parent")
+  const [selectedRole, setSelectedRole] = useState<LoginRole>("admin")
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -43,12 +43,7 @@ function LoginContent() {
     }
 
     if (data.user) {
-      // Redirect based on selected role during login
-      let dashboardPath = '/dashboard/parent'
-      
-      if (selectedRole === 'admin') {
-        dashboardPath = '/dashboard/admin'
-      }
+      let dashboardPath = '/dashboard/admin'
 
       router.push(redirectTo || dashboardPath)
       router.refresh()
@@ -90,42 +85,14 @@ function LoginContent() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {/* Role Selector */}
-          <div className="grid grid-cols-2 gap-3 mb-6">
-            <button
-              type="button"
-              onClick={() => setSelectedRole("parent")}
-              className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                selectedRole === "parent"
-                  ? "border-purple-500 bg-purple-50 text-purple-600"
-                  : "border-border bg-white hover:border-purple-300 text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                selectedRole === "parent" ? "bg-purple-500 text-white" : "bg-muted"
-              }`}>
-                <Users className="w-6 h-6" />
-              </div>
-              <span className="font-semibold text-sm">Parent</span>
-              <span className="text-xs text-muted-foreground">Manage children</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedRole("admin")}
-              className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                selectedRole === "admin"
-                  ? "border-blue-500 bg-blue-50 text-blue-600"
-                  : "border-border bg-white hover:border-blue-300 text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                selectedRole === "admin" ? "bg-blue-500 text-white" : "bg-muted"
-              }`}>
+          <div className="flex justify-center mb-6">
+            <div className="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-blue-500 bg-blue-50 text-blue-600 w-1/2">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-500 text-white">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <span className="font-semibold text-sm">Admin</span>
               <span className="text-xs text-muted-foreground">Manage platform</span>
-            </button>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -177,17 +144,12 @@ function LoginContent() {
               </Link>
             </div>
 
-            {/* Submit Button */}
             <Button
               type="submit"
               disabled={isLoading}
-              className={`w-full h-12 text-white rounded-xl font-semibold text-base shadow-lg transition-all hover:shadow-xl ${
-                selectedRole === "parent"
-                  ? "bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 shadow-purple-500/30"
-                  : "bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 shadow-blue-500/30"
-              }`}
+              className="w-full h-12 text-white rounded-xl font-semibold text-base shadow-lg transition-all hover:shadow-xl bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-600 hover:to-blue-500 shadow-blue-500/30"
             >
-              {isLoading ? "Signing in..." : `Sign In as ${selectedRole === "parent" ? "Parent" : "Admin"}`}
+              {isLoading ? "Signing in..." : "Sign In as Admin"}
             </Button>
 
             {/* Sign Up Link */}
