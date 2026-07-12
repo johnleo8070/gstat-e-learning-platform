@@ -39,7 +39,7 @@ export function Header() {
             <Link href="/" className={`text-sm font-medium transition-colors ${scrolled ? "text-primary hover:text-primary/80" : "text-white hover:text-white/80"}`}>
               Home
             </Link>
-            <Link href="/demo" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
+            <Link href="/book-demo" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
               Book a Demo
             </Link>
             <Link href="/login/parent" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
